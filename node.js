@@ -12,7 +12,7 @@ const FILE_2 = "./file2.txt";
 const RESULT_PATH = "./result.txt";
 //
 
-async function createDiffFile(firstPath, secondPath, resultPath) {
+const createDiffFile = async (firstPath, secondPath, resultPath) => {
   try {
     // Load&prepare files
     const filesToCompare = await Promise.all(
@@ -29,7 +29,7 @@ async function createDiffFile(firstPath, secondPath, resultPath) {
   } catch (err) {
     console.log(err);
   }
-}
+};
 
 function processFiles([file1, file2]) {
   let lng = file1.length < file2.length ? file2.length : file1.length;
@@ -54,7 +54,6 @@ function processFiles([file1, file2]) {
       if (file1.includes(file2[i])) res.push(`${++counter}   ${file2[i]}`);
     }
   }
-  console.log(lng);
   return res.join("\r\n");
 }
 
