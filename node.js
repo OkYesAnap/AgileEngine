@@ -51,7 +51,7 @@ function processFiles([file1, file2]) {
         res.push(`${++counter} - ${file1[i]}`);
     } else {
       if (file2.includes(file1[i])) res.push(`${++counter}   ${file1[i]}`);
-      if (file2.includes(file2[i])) res.push(`${++counter}   ${file2[i]}`);
+      if (file1.includes(file2[i])) res.push(`${++counter}   ${file2[i]}`);
     }
   }
   console.log(lng);
